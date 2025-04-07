@@ -1,12 +1,14 @@
-/* Apply Westminster font to the entire page */
-@import url('https://fonts.googleapis.com/css2?family=Westminster&display=swap');
+/* Remove default margin and padding from body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;  /* Ensure the page takes up the entire height */
+}
 
 /* Set the background color of the page to black */
 body {
   background-color: black;
   color: white; /* Ensure text is white for readability */
-  margin: 0;
-  padding: 0;
   font-family: 'Westminster', sans-serif; /* Applying Westminster font */
 }
 
@@ -23,7 +25,7 @@ body {
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensures the whole image is shown without cropping */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
   object-position: center center; /* Centers the image if it doesn't fill the container */
   border: none; /* Removes any border/frame around the image */
 }
