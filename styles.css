@@ -1,12 +1,4 @@
-/* Define the Westminster font using @font-face */
-@font-face {
-  font-family: 'Westminster';
-  src: url('fonts/Westminster.ttf') format('truetype'); /* Update this path if necessary */
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Remove default margin and padding from body and html */
+/* Ensure the page takes up the entire height */
 html, body {
   margin: 0;
   padding: 0;
@@ -16,7 +8,7 @@ html, body {
 /* Set the background color of the page to black */
 body {
   background-color: black;
-  color: grey; /* Ensure text is white for readability */
+  color: white; /* Ensure text is white for readability */
   font-family: 'Westminster', sans-serif; /* Applying Westminster font */
 }
 
@@ -24,8 +16,8 @@ body {
 .image-container {
   position: relative;
   display: inline-block;
-  width: 65%;
-  height: 65vh;  /* Make the container full height */
+  width: 100%;
+  height: 70vh;  /* Adjust height to 70% of the viewport height */
   overflow: hidden; /* Keep image clean, no overflow */
 }
 
@@ -50,7 +42,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   max-width: 90%;  /* Ensure the text doesn't stretch too wide */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
 }
 
 /* Remove the shadow from the text */
@@ -58,13 +49,11 @@ body {
   font-size: 3rem;  /* Adjusted for better size */
   margin: 0;
   font-family: 'Westminster', sans-serif; /* Applying Westminster font */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for header */
 }
 
 .text-overlay p {
   font-size: 1.5rem;  /* Adjusted for better size */
   margin: 10px 0 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Slight shadow for paragraph */
 }
 
 /* Button Styles */
