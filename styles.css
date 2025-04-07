@@ -1,10 +1,13 @@
+/* Apply Westminster font to the entire page */
+@import url('https://fonts.googleapis.com/css2?family=Westminster&display=swap');
+
 /* Set the background color of the page to black */
 body {
   background-color: black;
   color: white; /* Ensure text is white for readability */
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif; /* General font */
+  font-family: 'Westminster', sans-serif; /* Applying Westminster font */
 }
 
 /* Container for the image */
@@ -43,6 +46,7 @@ body {
 .text-overlay h1 {
   font-size: 3rem;  /* Adjusted for better size */
   margin: 0;
+  font-family: 'Westminster', sans-serif;
 }
 
 .text-overlay p {
@@ -84,7 +88,7 @@ body {
   bottom: -100%; /* Start off-screen */
   color: white;
   text-align: center;
-  font-family: "Arial", sans-serif;
+  font-family: "Westminster", sans-serif;
   animation: crawl 15s linear infinite;
 }
 
