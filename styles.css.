@@ -3,13 +3,14 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 100vh;  /* Make the image take full height */
+  height: 80vh;  /* Limit the height to 80% of the viewport height */
+  overflow: hidden; /* Prevent the image from overflowing */
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Ensures the image covers the entire container */
+  object-fit: cover;  /* Ensures the image covers the container without stretching */
 }
 
 /* Title and subtitle in the middle of the image */
@@ -17,21 +18,22 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the text */
+  transform: translate(-50%, -50%); /* This centers it */
   text-align: center;
   color: white;
   background: rgba(0, 0, 0, 0.5); /* Background for readability */
   padding: 20px;
   border-radius: 10px;
+  max-width: 90%;  /* Ensure the text doesn't stretch too wide */
 }
 
 .text-overlay h1 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Adjusted for better size */
   margin: 0;
 }
 
 .text-overlay p {
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Adjusted for better size */
   margin: 10px 0 20px;
 }
 
