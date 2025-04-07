@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;  /* Default font for the page */
   background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient from left to right */
   color: white;
   height: 100vh; /* Ensures the gradient covers the full viewport height */
@@ -20,7 +20,6 @@ body {
 
 /* Apply Westminster font to the body or specific elements */
 body {
-  font-family: 'Westminster', sans-serif; /* Applying Westminster font */
   background-color: black;
   color: white; /* Ensure text is white for readability */
   margin: 0;
@@ -56,13 +55,17 @@ body {
   z-index: 2; /* Keeps the text on top of the image */
 }
 
-/* Apply Westminster font to only the title */
+/* Apply Westminster font to only the "CBH" in the title */
 .hero-content h1 {
   font-size: 4rem;
-  font-family: 'Westminster', serif; /* Applying Westminster font to the title */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+.hero-content h1 span {
+  font-family: 'Westminster', serif; /* Applying Westminster font to "CBH" */
+}
+
+/* Paragraph Styles */
 .hero-content p {
   font-size: 1.5rem;
   margin: 10px 0;
