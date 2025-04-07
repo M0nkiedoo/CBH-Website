@@ -18,7 +18,7 @@ body {
 .hero-container {
   width: 100%;
   height: 100vh; /* Full viewport height for the hero section */
-  background-image: url('hairy-white-hole.jpg'); /* Your hero image */
+  background-image: url('hairy-white-hole.jpg'); /* hairy-white-holes */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -48,6 +48,10 @@ body {
   font-size: 1.5rem;
   margin: 10px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 span {
+  font-family: 'Westminster', serif; /* Applying Westminster font to "CBH" */
 }
 
 /* Theory Page Styles */
