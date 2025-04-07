@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%); /* This centers the text */
   text-align: center;
   color: white; /* Keep the text color white for readability */
-  background: black; /* Remove background */
+  background: clear; /* Remove background */
   padding: 20px;
   border-radius: 5px;
   max-width: 80%;  /* Ensure the text doesn't stretch too wide */
