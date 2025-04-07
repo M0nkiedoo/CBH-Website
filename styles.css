@@ -2,14 +2,14 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;  /* Ensure the page takes up the entire height */
+  height: 100%;
 }
 
 /* Set the background color of the page to black */
 body {
   background-color: black;
   color: white; /* Ensure text is white for readability */
-  font-family: 'Westminster', sans-serif; /* Applying Westminster font */
+  font-family: 'Westminster', sans-serif; /* Apply Westminster font */
 }
 
 /* Container for the image */
@@ -17,17 +17,34 @@ body {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 70vh;  /* Adjust height to 70% of the viewport height */
+  height: 100vh;  /* Make the container full height */
   overflow: hidden; /* Keep image clean, no overflow */
 }
 
 /* Image Settings: Ensures the image fits without stretching */
 .image-container img {
   width: 100%;
-  height: auto;
-  object-fit: contain; /* Ensures the whole image is shown without cropping */
-  object-position: center center; /* Centers the image if it doesn't fill the container */
+  height: 100%;  /* Make the image fill the entire height */
+  object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+  object-position: center center; /* Centers the image */
   border: none; /* Removes any border/frame around the image */
+}
+
+/* Define the Westminster font using @font-face */
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype'); /* Update path if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply Westminster font to the body or specific elements */
+body {
+  font-family: 'Westminster', sans-serif; /* Applying Westminster font */
+  background-color: black;
+  color: white; /* Ensure text is white for readability */
+  margin: 0;
+  padding: 0;
 }
 
 /* Title and subtitle in the middle of the image */
@@ -42,6 +59,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   max-width: 90%;  /* Ensure the text doesn't stretch too wide */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
 }
 
 /* Remove the shadow from the text */
@@ -54,6 +72,7 @@ body {
 .text-overlay p {
   font-size: 1.5rem;  /* Adjusted for better size */
   margin: 10px 0 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Slight shadow for paragraph */
 }
 
 /* Button Styles */
