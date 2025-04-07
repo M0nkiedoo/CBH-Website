@@ -1,36 +1,24 @@
 /* Global Styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;  /* Default font for the page */
-  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient from left to right */
-  color: white;
-  height: 100vh; /* Ensures the gradient covers the full viewport height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Define the Westminster font using @font-face */
-@font-face {
-  font-family: 'Westminster';
-  src: url('fonts/Westminster.ttf') format('truetype'); /* Update path if necessary */
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Apply Westminster font to the body or specific elements */
-body {
-  background-color: black;
-  color: white; /* Ensure text is white for readability */
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%; /* Ensure the gradient and background cover the full page */
+  background: linear-gradient(90deg, #2f2f2f, #d1d1d1); /* Example gradient, change if needed */
+  color: white;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+/* Full Page Shaded Background */
+body {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for the entire page */
 }
 
 /* Hero Section Styles */
 .hero-container {
   width: 100%;
-  height: 100vh;
-  background-image: url('hairy-white-hole.jpg'); /* hairy-white-hole */
+  height: 100vh; /* Full viewport height for the hero section */
+  background-image: url('hairy-white-hole.jpg'); /* Your hero image */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -40,34 +28,30 @@ body {
   overflow: hidden;
 }
 
-/* Center the text content in the hero section */
+/* Full page overlay for all text */
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* This centers the text */
+  position: relative;
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.6); /* Slight background behind text */
+  z-index: 2; /* Keeps the text on top of the background */
   padding: 20px;
   border-radius: 10px;
   width: 80%;
-  z-index: 2; /* Keeps the text on top of the image */
 }
 
-/* Apply Westminster font to only the "CBH" in the title */
 .hero-content h1 {
   font-size: 4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.hero-content h1 span {
-  font-family: 'Westminster', serif; /* Applying Westminster font to "CBH" */
-}
-
-/* Paragraph Styles */
 .hero-content p {
   font-size: 1.5rem;
   margin: 10px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Theory Page Styles */
+.theory-container {
+  text-align: center;
+  padding: 50px 20px;
 }
