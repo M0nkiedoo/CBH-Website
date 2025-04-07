@@ -3,8 +3,8 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 100vh;  /* Use 100% of the viewport height */
-  overflow: hidden; /* Hide any overflow from the image */
+  height: 100vh;  /* Make the container full height */
+  overflow: hidden; /* Keep image clean, no overflow */
 }
 
 /* Image Settings: Ensures no cropping and maintains aspect ratio */
@@ -12,7 +12,9 @@
   width: 100%;
   height: 100%;
   object-fit: contain; /* Ensures the whole image is shown without cropping */
-  object-position: center fill; /* Centers the image if it doesn't fill the container */
+  object-position: center center; /* Centers the image if it doesn't fill the container */
+}
+
 /* Title and subtitle in the middle of the image */
 .text-overlay {
   position: absolute;
@@ -20,16 +22,16 @@
   left: 50%;
   transform: translate(-50%, -50%); /* This centers the text */
   text-align: center;
-  color: white;  /* Keep the text color white for readability */
-  background: none; /* Set the background to none */
+  color: white; /* Keep the text color white for readability */
+  background: none; /* Remove background */
   padding: 20px;
   border-radius: 10px;
-  max-width: 90%;  /* Ensure text doesn't stretch too wide */
+  max-width: 90%;  /* Ensure the text doesn't stretch too wide */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: subtle shadow for better text visibility */
 }
 
 .text-overlay h1 {
-  font-size: 5rem;  /* Adjusted for better size */
+  font-size: 3rem;  /* Adjusted for better size */
   margin: 0;
 }
 
