@@ -9,9 +9,17 @@ html, body {
   position: relative;
 }
 
+@font-face {
+  font-family: 'Westminster';
+  src: url('path/to/Westminster.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Full Page Shaded Background */
 body {
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for the entire page */
+  font-family: 'Westminster', serif;  /* Apply Westminster font */
 }
 
 /* Hero Section Styles */
