@@ -25,9 +25,9 @@
   color: white; /* Keep the text color white for readability */
   background: black; /* Remove background */
   padding: 20px;
-  border-radius: 10px;
-  max-width: 90%;  /* Ensure the text doesn't stretch too wide */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: subtle shadow for better text visibility */
+  border-radius: 5px;
+  max-width: 80%;  /* Ensure the text doesn't stretch too wide */
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0); /* Optional: subtle shadow for better text visibility */
 }
 
 .text-overlay h1 {
