@@ -10,6 +10,23 @@ body {
   align-items: center;
 }
 
+/* Define the Westminster font using @font-face */
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype'); /* Update path if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply Westminster font to the body or specific elements */
+body {
+  font-family: 'Westminster', sans-serif; /* Applying Westminster font */
+  background-color: black;
+  color: white; /* Ensure text is white for readability */
+  margin: 0;
+  padding: 0;
+}
+
 /* Hero Section Styles */
 .hero-container {
   width: 100%;
