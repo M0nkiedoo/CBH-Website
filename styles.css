@@ -16,7 +16,7 @@ html, body {
 /* Set the background color of the page to black */
 body {
   background-color: black;
-  color: white; /* Ensure text is white for readability */
+  color: grey; /* Ensure text is white for readability */
   font-family: 'Westminster', sans-serif; /* Applying Westminster font */
 }
 
@@ -24,7 +24,7 @@ body {
 .image-container {
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: 65%;
   height: 65vh;  /* Make the container full height */
   overflow: hidden; /* Keep image clean, no overflow */
 }
