@@ -16,7 +16,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: relative;  /* Ensures the content inside is positioned correctly */
+  overflow: hidden; /* Prevent any overflow from image scaling */
 }
 
 /* Center the text content in the hero section */
@@ -31,6 +32,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 80%; /* Ensure the text doesn't stretch too wide */
+  z-index: 2; /* Keeps the text on top of the image */
 }
 
 .hero-content h1 {
