@@ -50,6 +50,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   max-width: 90%;  /* Ensure the text doesn't stretch too wide */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
 }
 
 /* Remove the shadow from the text */
@@ -57,11 +58,13 @@ body {
   font-size: 3rem;  /* Adjusted for better size */
   margin: 0;
   font-family: 'Westminster', sans-serif; /* Applying Westminster font */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for header */
 }
 
 .text-overlay p {
   font-size: 1.5rem;  /* Adjusted for better size */
   margin: 10px 0 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Slight shadow for paragraph */
 }
 
 /* Button Styles */
