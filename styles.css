@@ -5,7 +5,7 @@ html, body {
   height: 100%; /* Ensure the gradient and background cover the full page */
   background: linear-gradient(90deg, #2f2f2f, #d1d1d1); /* Example gradient, change if needed */
   color: white;
-  font-family: 'Helvetica', 'Arial', sans-serif; /* Default to Helvetica, fallback to Arial */
+  font-family: 'Arial', sans-serif;
   position: relative;
 }
 
@@ -25,7 +25,7 @@ html, body {
   font-style: normal;
 }
 
-/* Apply Helvetica font to specific elements */
+/* Apply Helvetica to specific elements */
 .helvetica-text {
   font-family: 'Helvetica', sans-serif; /* Use Helvetica for this text */
 }
