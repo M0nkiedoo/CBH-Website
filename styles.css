@@ -2,18 +2,26 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure the background covers the full page */
+  height: 100%;
   font-family: 'Arial', sans-serif;
   color: white;
   position: relative;
 }
 
+/* Load Westminster font using @font-face */
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype'); /* Path to Westminster font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Hero Section Styles */
 .hero-container {
   width: 100%;
-  height: 70vh;
-  background-image: url('images/hairy-white-hole.jpg'); /* Image path */
-  background-size: 50%; /* This will scale the background image to 50% of its original size */
+  height: 50vh; /* Adjusted height */
+  background-image: url('images/hairy-white-hole.jpg');
+  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
@@ -31,10 +39,10 @@ html, body {
   width: 80%;
 }
 
-/* Title Styles */
-.hero-content h1 {
+/* Westminster Font for CBH */
+.westminster {
+  font-family: 'Westminster', serif; /* Apply Westminster font to "CBH" */
   font-size: 4rem;
-  font-family: 'Westminster', serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
@@ -59,56 +67,7 @@ html, body {
   background-color: rgba(254, 180, 123, 0.8);
 }
 
-/* Sidebar Styles */
-.sidebar {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  width: 200px;
-  transform: translateY(-50%); /* Center the sidebar vertically */
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background for the sidebar */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center links horizontally */
-  padding-top: 20px;
-}
-
-.sidebar a {
-  color: white;
-  padding: 15px;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-bottom: 1px solid #fff;
-  transition: background-color 0.3s ease;
-  width: 100%; /* Make links fill the width */
-  text-align: center; /* Center text */
-}
-
-.sidebar a:hover {
-  background-color: rgba(254, 180, 123, 0.8);
-}
-
-/* Chapter Content Styles */
-.chapter-content {
-  padding: 50px 20px;
-  margin-left: 220px; /* Create space for the sidebar */
-}
-
-.chapter-content h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
-  text-transform: uppercase;
-}
-
-.chapter-content p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin: 15px 0;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+/* Helvetica Text */
+.helvetica-text {
+  font-family: 'Helvetica', sans-serif;
 }
