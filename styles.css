@@ -10,7 +10,7 @@ html, body {
 }
 
 @font-face {
-  font-family: 'Westminster';
+  font-family: 'Helvetica', 'Westminster', sans-serif;
   src: url('fonts/Westminster.ttf') format('truetype'); /* Ensure the font file is at the correct path */
   font-weight: normal;
   font-style: normal;
