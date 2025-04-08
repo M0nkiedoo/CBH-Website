@@ -142,3 +142,8 @@ body {
   color: red;  /* Change text color to red on hover */
   background-color: rgba(51, 51, 51, 0.8);  /* Keep the background transparent on hover */
 }
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
