@@ -63,6 +63,11 @@ body {
   font-family: 'Westminster', serif; /* Applying Westminster font to "CBH" */
 }
 
+/* Apply Helvetica font to paragraph and button */
+.helvetica-text {
+  font-family: 'Helvetica', sans-serif; /* Applying Helvetica font */
+}
+
 /* Style the link to look like a button */
 .button-link {
   display: inline-block;
