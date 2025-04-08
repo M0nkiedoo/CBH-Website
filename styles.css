@@ -11,7 +11,14 @@ html, body {
 
 @font-face {
   font-family: 'Westminster';
-  src: url('path/to/Westminster.ttf') format('truetype'); /* Ensure the font file is at the correct path */
+  src: url('font/Westminster.ttf') format('truetype'); /* Ensure the font file is at the correct path */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('font/Helvetica.ttf') format('truetype'); /* Ensure the font file is at the correct path */
   font-weight: normal;
   font-style: normal;
 }
