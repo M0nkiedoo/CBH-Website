@@ -9,11 +9,35 @@ html, body {
   position: relative;
 }
 
+/* Load Helvetica font using @font-face */
 @font-face {
-  font-family: 'Helvetica', 'Westminster', sans-serif;
-  src: url('fonts/Westminster.ttf') format('truetype'); /* Ensure the font file is at the correct path */
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica.ttf') format('truetype'); /* Path to Helvetica font file */
   font-weight: normal;
   font-style: normal;
+}
+
+/* Load Westminster font using @font-face */
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype'); /* Path to Westminster font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply Helvetica to specific elements */
+.helvetica-text {
+  font-family: 'Helvetica', sans-serif; /* Use Helvetica for this text */
+}
+
+/* Apply Westminster to specific elements */
+.hero-content h1 span {
+  font-family: 'Westminster', serif; /* Use Westminster for "CBH" */
+}
+
+/* Apply fallback font-family to the body */
+body {
+  font-family: 'Helvetica', 'Westminster', sans-serif; /* Default font: Helvetica, fallback to Westminster */
 }
 
 /* Full Page Shaded Background */
