@@ -30,20 +30,14 @@ html, body {
   font-family: 'Helvetica', sans-serif; /* Use Helvetica for this text */
 }
 
-/* Apply Westminster to specific elements */
+/* Apply Westminster font to specific elements */
 .hero-content h1 span {
   font-family: 'Westminster', serif; /* Use Westminster for "CBH" */
 }
 
-/* Apply fallback font-family to the body */
-body {
-  font-family: 'Helvetica', 'Westminster', sans-serif; /* Default font: Helvetica, fallback to Westminster */
-}
-
-/* Full Page Shaded Background */
+/* Full Page Shaded Background for the whole page */
 body {
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for the entire page */
-  font-family: 'Westminster', serif; /* Apply Westminster font */
 }
 
 /* Hero Section Styles */
@@ -91,6 +85,7 @@ body {
 .helvetica-text {
   font-family: 'Helvetica', sans-serif; /* Applying Helvetica font */
 }
+
 /* Style the link to look like a button with slight transparency */
 .button-link {
   display: inline-block;
