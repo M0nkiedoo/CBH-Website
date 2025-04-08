@@ -99,23 +99,6 @@ body {
   transition: color 0.3s ease, background-color 0.3s ease;  /* Smooth hover effect for both color and background */
 }
 
-/* Button hover effect */
-.button-link:hover {
-  color: red;  /* Change text color to red on hover */
-  background-color: rgba(51, 51, 51, 0.8);  /* Keep the background transparent on hover */
-}
-
-/* Theory Page Styles */
-.theory-container {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-/* Style for chapter navigation buttons (row of buttons at top) */
-.chapter-nav {
-  margin-top: 20px;
-}
-
 .chapter-nav a {
   display: inline-block;
   margin: 0 10px;  /* Space between buttons */
@@ -125,6 +108,30 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem; /* Slightly reduced font size */
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;  /* Smooth hover effect for both color and background */
+}
+
+/* Button hover effect */
+.chapter-nav a:hover {
+  color: red;  /* Change text color to red on hover */
+  background-color: rgba(51, 51, 51, 0.8);  /* Keep the background transparent on hover */
+}
+/* Style for chapter navigation buttons (row of buttons at top) */
+.chapter-nav {
+  margin-top: 20px;
+}
+
+.chapter-nav a {
+  display: inline-block;
+  margin: 0 5px;  /* Slightly smaller space between buttons */
+  padding: 7px 15px; /* 50% of original padding */
+  background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent dark background */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.5rem; /* 50% of original font size */
   text-transform: uppercase;
   border-radius: 5px;
   transition: color 0.3s ease, background-color 0.3s ease;  /* Smooth hover effect for both color and background */
