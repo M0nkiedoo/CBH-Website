@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100%; /* Ensure the background covers the full page */
   font-family: 'Arial', sans-serif;
   color: white;
   position: relative;
@@ -62,13 +62,14 @@ html, body {
 /* Sidebar Styles */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 50%;
   left: 0;
   width: 200px;
-  height: 100%;
+  transform: translateY(-50%); /* Center the sidebar vertically */
   background-color: rgba(0, 0, 0, 0.7); /* Dark background for the sidebar */
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center links horizontally */
   padding-top: 20px;
 }
 
@@ -80,6 +81,8 @@ html, body {
   text-transform: uppercase;
   border-bottom: 1px solid #fff;
   transition: background-color 0.3s ease;
+  width: 100%; /* Make links fill the width */
+  text-align: center; /* Center text */
 }
 
 .sidebar a:hover {
