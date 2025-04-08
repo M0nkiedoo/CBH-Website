@@ -63,8 +63,27 @@ body {
   font-family: 'Westminster', serif; /* Applying Westminster font to "CBH" */
 }
 
+  
+/* Button hover effect */
+.button-link:hover {
+  background-color: #feb47b;  /* Change color on hover */
+}
+/* Style the link to look like a button */
+.button-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #333; /* Dark background */
+  color: white;  /* White text */
+  text-decoration: none;  /* Remove underline */
+  font-weight: bold;
+  text-transform: uppercase;  /* Uppercase text */
+  border-radius: 5px;  /* Rounded corners */
+  transition: background-color 0.3s ease;  /* Smooth hover effect */
+}
+
 /* Theory Page Styles */
 .theory-container {
   text-align: center;
   padding: 50px 20px;
 }
+  
