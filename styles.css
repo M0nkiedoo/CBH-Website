@@ -5,28 +5,39 @@ html, body {
   height: 100%; /* Ensure the gradient and background cover the full page */
   background: linear-gradient(90deg, #2f2f2f, #d1d1d1); /* Example gradient, change if needed */
   color: white;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Default to Helvetica, fallback to Arial */
   position: relative;
 }
 
-@font-face {
-  font-family: 'Westminster';
-  src: url('font/Westminster.ttf') format('truetype'); /* Ensure the font file is at the correct path */
-  font-weight: normal;
-  font-style: normal;
-}
-
+/* Load Helvetica font using @font-face */
 @font-face {
   font-family: 'Helvetica';
-  src: url('font/Helvetica.ttf') format('truetype'); /* Ensure the font file is at the correct path */
+  src: url('fonts/Helvetica.ttf') format('truetype'); /* Path to Helvetica font file */
   font-weight: normal;
   font-style: normal;
 }
 
-/* Full Page Shaded Background */
+/* Load Westminster font using @font-face */
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype'); /* Path to Westminster font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply Helvetica font to specific elements */
+.helvetica-text {
+  font-family: 'Helvetica', sans-serif; /* Use Helvetica for this text */
+}
+
+/* Apply Westminster font to specific elements */
+.hero-content h1 span {
+  font-family: 'Westminster', serif; /* Use Westminster for "CBH" */
+}
+
+/* Full Page Shaded Background for the whole page */
 body {
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for the entire page */
-  font-family: 'Westminster', serif; /* Apply Westminster font */
 }
 
 /* Hero Section Styles */
@@ -75,22 +86,23 @@ body {
   font-family: 'Helvetica', sans-serif; /* Applying Helvetica font */
 }
 
-/* Style the link to look like a button */
+/* Style the link to look like a button with slight transparency */
 .button-link {
   display: inline-block;
   padding: 15px 30px;
-  background-color: #333; /* Dark background */
-  color: white; /* White text */
-  text-decoration: none; /* Remove underline */
+  background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent dark background */
+  color: white;  /* White text */
+  text-decoration: none;  /* Remove underline */
   font-weight: bold;
-  text-transform: uppercase; /* Uppercase text */
-  border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  text-transform: uppercase;  /* Uppercase text */
+  border-radius: 5px;  /* Rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease;  /* Smooth hover effect for both color and background */
 }
 
 /* Button hover effect */
 .button-link:hover {
-  background-color: #feb47b; /* Change color on hover */
+  color: red;  /* Change text color to red on hover */
+  background-color: rgba(51, 51, 51, 0.8);  /* Keep the background transparent on hover */
 }
 
 /* Theory Page Styles */
