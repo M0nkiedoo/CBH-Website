@@ -1,74 +1,44 @@
-/* Global Styles */
-html, body {
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype');
+}
+
+body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: black; /* Set the background to black */
-  font-family: 'Arial','Westminster', sans-serif;
-  color: white;
-  position: relative;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: 'Westminster', monospace;
+  background: black;
 }
 
-/* Hero Image Section */
-.hero-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
+.hero {
+  background: url('images/hairy-white-hole.jpg') no-repeat center center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column; /* Stack the content */
+  transition: filter 1s ease-in-out;
 }
 
-/* Hero Image */
-.hero-image {
-  width: 70%;
-  height: 70%; /* Make the image take the full height of the container */
-  object-fit: cover; /* Ensures the image fills the container */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Keeps the image behind the text */
+.hero.filter-red {
+  filter: hue-rotate(-90deg) saturate(2);
 }
 
-/* Hero Content Styles */
-.hero-content {
-  z-index: 1;
-  max-width: 800px; /* Maximum content width */
-}
-
-/* Title Styles */
-.hero-content h1 {
-  font-size: 4rem;
-  font-family: 'Westminster', serif; /* Westminster font for CBH */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-/* Subtitle Styles */
-.hero-content p {
-  font-size: 1.5rem;
-  font-family: 'Helvetica', sans-serif; /* Helvetica font for subtitle */
-  margin: 10px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-/* Button Styles */
-.button-link {
-  padding: 12px 24px;
-  background-color: rgba(51, 51, 51, 0.8);
+.title-link {
   color: white;
+  font-size: 12vw;
   text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border-radius: 5px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-  position: absolute;
-  bottom: 20px; /* Keep it 20px from the bottom */
+  font-weight: bold;
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
 }
 
-.button-link:hover {
-  background-color: rgba(254, 180, 123, 0.8);
+.title-link:hover {
+  opacity: 0.8;
 }
