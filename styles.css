@@ -6,82 +6,69 @@ html, body {
   font-family: 'Arial', sans-serif;
   color: white;
   position: relative;
-  overflow-x: hidden; /* Prevent horizontal scroll when resized */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Hero Image Section */
-.image-container {
-  width: 100%;
-  height: 500px; /* Fixed height for the image section */
+.hero-container {
   position: relative;
-  overflow: hidden; /* Ensures the image stays within the container */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack text and button */
+  text-align: center;
 }
 
 /* Hero Image */
 .hero-image {
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  object-fit: cover; /* Ensures the image fills the container */
-  transition: filter 0.5s ease; /* Smooth transition for filter effect */
-}
-
-/* Overlay for Color Change */
-.overlay {
+  width: 100%;
+  height: auto;
+  max-height: 100%; /* Ensures the image doesn't stretch vertically */
+  object-fit: cover; /* Ensures the image fills the container properly */
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 0, 0, 0.5); /* Default color for the overlay */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease; /* Smooth transition */
+  z-index: -1; /* Keeps the image behind the text */
 }
 
-/* Apply a new color on button click */
-.image-container.color-changed .overlay {
-  opacity: 1; /* Show the overlay on button click */
-}
-
-/* Content Section */
-.content {
-  text-align: center;
-  margin-top: 20px;
+/* Hero Content Styles */
+.hero-content {
+  z-index: 1;
+  max-width: 800px; /* Maximum content width */
 }
 
 /* Title Styles */
-.westminster-text {
-  font-family: 'Westminster', serif;
+.hero-content h1 {
   font-size: 4rem;
+  font-family: 'Westminster', serif; /* Westminster font */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Subtitle Styles */
-.helvetica-text {
-  font-family: 'Helvetica', sans-serif;
+.hero-content p {
   font-size: 1.5rem;
+  font-family: 'Helvetica', sans-serif; /* Helvetica font */
   margin: 10px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Button Styles */
 .button-link {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
   text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   border-radius: 5px;
+  margin-top: 20px;
   transition: background-color 0.3s ease;
-  position: fixed;
-  bottom: 20px; /* Keep it 20px from the bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Center the button */
+  position: absolute;
+  bottom: 20px; /* Fixed position at the bottom */
 }
 
 .button-link:hover {
   background-color: rgba(254, 180, 123, 0.8);
-}
-
-/* Apply color change to image on button click */
-.hero-image.color-changed {
-  filter: brightness(0.7); /* Apply a filter to change the image color */
 }
