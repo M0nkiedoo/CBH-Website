@@ -6,16 +6,17 @@ html, body {
   font-family: 'Arial', sans-serif;
   color: white;
   position: relative;
+  overflow-x: hidden; /* Prevent horizontal scroll when resized */
 }
 
 /* Hero Section Styles */
 .hero-container {
-  width: 100%;
-  height: 100vh; /* Adjusted height */
+  width: 100%; /* Full width */
+  height: 500px; /* Fixed height for hero section */
   background-image: url('images/hairy-white-hole.jpg'); /* Image path */
-  background-size: cover; /* Ensure the image covers the entire container */
-  background-position: center; /* Keeps the image centered */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* Prevents tiling */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,17 +24,14 @@ html, body {
   overflow: hidden;
 }
 
-/* Apply a new background color on button click */
-.hero-container.color-changed {
-  background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red overlay */
-}
-
 /* Hero Content Styles */
 .hero-content {
   position: relative;
   text-align: center;
   z-index: 2;
-  width: 80%;
+  width: 100%; /* Full width */
+  max-width: 800px; /* Maximum width of content */
+  margin: 0 auto; /* Center content */
 }
 
 /* Title Styles */
@@ -62,9 +60,4 @@ html, body {
 
 .button-link:hover {
   background-color: rgba(254, 180, 123, 0.8);
-}
-
-/* Helvetica Text */
-.helvetica-text {
-  font-family: 'Helvetica', sans-serif;
 }
