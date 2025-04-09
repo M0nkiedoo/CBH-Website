@@ -8,20 +8,22 @@
 </head>
 <body>
 
-  <!-- Hero Section with Image Tag -->
-  <div class="hero-container" id="hero">
-    <img src="images/hairy-white-hole.jpg" alt="Cosmic Bowel Hypothesis" class="hero-image">
-    <div class="hero-content">
-      <h1><span>CBH</span> Model</h1>
-      <p class="helvetica-text">A speculative, conceptual exploration of gravitational thermodynamics – with a humorous twist.</p>
-    </div>
+  <!-- Image Section -->
+  <div class="image-container">
+    <img src="images/hairy-white-hole.jpg" alt="Cosmic Bowel Hypothesis" class="main-image">
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h1><span>CBH</span> Model</h1>
+    <p>A speculative, conceptual exploration of gravitational thermodynamics – with a humorous twist.</p>
     <a href="javascript:void(0);" class="button-link helvetica-text" onclick="changeImageColor()">Start Reading</a>
   </div>
 
   <script>
     // JavaScript to add a class that changes the hero image color
     function changeImageColor() {
-      document.getElementById('hero').classList.toggle('color-changed');
+      document.querySelector('.main-image').classList.toggle('color-changed');
     }
   </script>
 
