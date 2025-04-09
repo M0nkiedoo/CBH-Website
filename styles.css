@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   height: 100%;
   background-color: black; /* Set the background to black */
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial','Westminster', sans-serif;
   color: white;
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll */
@@ -24,8 +24,8 @@ html, body {
 
 /* Hero Image */
 .hero-image {
-  width: 100%;
-  height: 100%; /* Make the image take the full height of the container */
+  width: 70%;
+  height: 70%; /* Make the image take the full height of the container */
   object-fit: cover; /* Ensures the image fills the container */
   position: absolute;
   top: 0;
