@@ -20,7 +20,7 @@ html, body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  transition: background-color 0.5s ease; /* Smooth transition */
+  transition: background-color 0.5s ease; /* Smooth transition for color change */
 }
 
 /* Apply a new background color on button click */
