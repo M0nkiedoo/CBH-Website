@@ -5,40 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBH Theory</title>
   <style>
+    @font-face {
+      font-family: 'Westminster';
+      src: url('fonts/Westminster.ttf') format('truetype');
+    }
+
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Westminster', monospace;
       background: black;
     }
+
     .hero {
       background: url('images/hairy-white-hole.jpg') no-repeat center center;
-      background-size: cover;
+      background-size: 75%;
+      background-repeat: no-repeat;
+      background-position: center;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: filter 0.4s ease-in-out;
     }
+
     .title-link {
       color: white;
-      font-size: 12vw; /* Adjusted to take approx 50% of the screen width */
+      font-size: 12vw;
       text-decoration: none;
       font-weight: bold;
       text-shadow:
         -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000,
-        2px 2px 0 #000;
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
     }
+
     .title-link:hover {
       opacity: 0.8;
     }
   </style>
+  <script>
+    function changeBackground() {
+      document.querySelector('.hero').style.filter = 'hue-rotate(180deg)';
+    }
+  </script>
 </head>
 <body>
   <div class="hero">
-    <a href="theory.html" class="title-link">CBH Theory</a>
+    <a href="theory.html" class="title-link" onclick="changeBackground()">CBH Theory</a>
   </div>
 </body>
 </html>
