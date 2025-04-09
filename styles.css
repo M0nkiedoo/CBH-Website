@@ -12,13 +12,13 @@ html, body {
 /* Hero Section Styles */
 .hero-container {
   width: 100%; /* Full width */
-  height: 100vh; /* Set to 100% of the viewport height for the hero section */
+  height: 500px; /* Fixed height for hero section */
   background-image: url('images/hairy-white-hole.jpg'); /* Image path */
-  background-size: cover; /* Makes sure the image covers the section without distortion */
-  background-position: center; /* Center the image */
+  background-size: cover; /* Ensures the image covers the container without distortion */
+  background-position: center; /* Keeps the image centered */
   background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed; /* Keeps the image fixed in place */
   display: flex;
-  flex-direction: column; /* Stack content and button */
   justify-content: center;
   align-items: center;
   position: relative;
