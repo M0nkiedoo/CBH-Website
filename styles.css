@@ -11,7 +11,7 @@ html, body {
 /* Hero Section Styles */
 .hero-container {
   width: 100%;
-  height: 100vh; /* Adjust the height for the hero section */
+  height: 50vh; /* Adjust the height for the hero section */
   background-image: url('images/hairy-white-hole.jpg'); /* Image path */
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
