@@ -53,22 +53,27 @@
       font-size: 2.5rem;
     }
   </style>
-  <link rel="stylesheet" href="theory.css" />
 </head>
 <body>
   <div class="container">
     <a href="index.html" class="back-link">← Back to homepage</a>
     <h1>CBH Theory</h1>
 
-<script>
+    <!-- Add a div to receive the external content -->
+    <div id="theory-content">
+      <p><em>Loading theory...</em></p>
+    </div>
+  </div>
+
+  <script>
     // Load theory text from external file
     fetch('theory-content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('theory-content.html').innerHTML = data;
+        document.getElementById('theory-content').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('theory-content.html').innerHTML = '<p>Failed to load theory text.</p>';
+        document.getElementById('theory-content').innerHTML = '<p>Failed to load theory text.</p>';
         console.error('Error loading theory:', err);
       });
   </script>
