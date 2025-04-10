@@ -11,12 +11,21 @@
 
     body {
       margin: 0;
-      padding: 2rem;
-      background-color: #111;
+      padding: 0;
+      background: url('images/cosmic-background.png') no-repeat center center fixed;
+      background-size: cover;
       color: #eee;
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 2rem; /* 18px for better readability */
-      line-height: 2.4;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6); /* transparent black to float text */
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
     }
 
     h1 {
@@ -46,8 +55,9 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="back-link">← Back to homepage</a>
-  <h1>CBH Theory</h1>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to homepage</a>
+    <h1>CBH Theory</h1>
 
   <p>The Cosmic Bowel Hypothesis of
 Gravitational Thermodynamics
