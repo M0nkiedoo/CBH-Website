@@ -3,32 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <title>CBH Theory</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @font-face {
+      font-family: 'Westminster';
+      src: url('fonts/Westminster.ttf') format('truetype');
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      font-family: 'Westminster', monospace;
+    }
+
+    /* Flicker effect overlay */
+    .flicker-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+      animation: flickerFlash 1.8s infinite ease-in-out;
+      z-index: 2;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes flickerFlash {
+      0%, 100% { opacity: 0.02; }
+      10% { opacity: 0.08; }
+      20% { opacity: 0.03; }
+      30% { opacity: 0.10; }
+      40%, 60% { opacity: 0.015; }
+      70% { opacity: 0.07; }
+      85% { opacity: 0.025; }
+      95% { opacity: 0.05; }
+    }
+
+    .hero {
+      background: url('images/electric-arc-index-bg.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: filter 1s ease-in-out;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero.flash {
+      filter: hue-rotate(-120deg) saturate(2);
+    }
+
+    .title-link {
+      color: white;
+      font-size: 12vw;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+      position: relative;
+      z-index: 3;
+    }
+
+    .title-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Title ripple animation */
+    @keyframes rippleEffect {
+      0%   { transform: scale(1) skewX(0deg); }
+      25%  { transform: scale(1.1) skewX(5deg); }
+      50%  { transform: scale(0.95) skewX(-4deg); }
+      75%  { transform: scale(1.05) skewX(3deg); }
+      100% { transform: scale(1) skewX(0deg); }
+    }
+
+    .ripple {
+      animation: rippleEffect 0.8s ease-in-out;
+    }
+
+    /* Lightning bolt pulse */
+    .bolt {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 60px;
+      height: 100px;
+      opacity: 0.05;
+      transform: translateX(-50%) rotate(-15deg);
+      animation: pulseBolt 3s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @keyframes pulseBolt {
+      0%, 100% { opacity: 0.02; transform: translateX(-50%) rotate(-15deg) scale(1); }
+      50%      { opacity: 0.08; transform: translateX(-50%) rotate(-15deg) scale(1.1); }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Flicker overlay -->
   <div class="flicker-overlay"></div>
 
-  <!-- Hero section with title -->
+  <!-- Hero section with ripple title -->
   <div class="hero" id="hero">
     <a href="theory.html" class="title-link" onclick="flashBackground()">CBH Theory</a>
-    
-    <!-- Optional lightning bolt -->
+
+    <!-- Optional lightning bolt pulse -->
     <svg class="bolt" viewBox="0 0 100 100">
       <polyline points="40,0 60,40 45,40 60,100 35,60 50,60 40,0"
                 fill="none" stroke="white" stroke-width="3" />
     </svg>
   </div>
 
-  <!-- Audio for interaction -->
+  <!-- Audio assets -->
   <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
   <audio id="zap-sound" src="sounds/arc-zap.mp3" preload="auto"></audio>
 
-  <!-- Interaction scripts -->
   <script>
+    let context, osc, gain, lfo;
+
+    window.addEventListener('load', () => {
+      context = new (window.AudioContext || window.webkitAudioContext)();
+
+      osc = context.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = 58;
+
+      gain = context.createGain();
+      gain.gain.value = 0.015;
+
+      osc.connect(gain).connect(context.destination);
+      osc.start();
+
+      lfo = context.createOscillator();
+      const lfoGain = context.createGain();
+      lfo.type = 'sine';
+      lfo.frequency.value = 0.3;
+      lfoGain.gain.value = 0.005;
+      lfo.connect(lfoGain).connect(gain.gain);
+      lfo.start();
+
+      document.body.addEventListener('click', () => {
+        context.resume();
+      }, { once: true });
+
+      // Hover sound
+      document.querySelector('.title-link').addEventListener('mouseenter', () => {
+        const zapSound = document.getElementById('zap-sound');
+        if (zapSound) {
+          zapSound.currentTime = 0;
+          zapSound.play();
+        }
+      });
+    });
+
     function flashBackground() {
       const hero = document.getElementById('hero');
+      const title = document.querySelector('.title-link');
       hero.classList.add('flash');
 
       const clickSound = document.getElementById('click-sound');
@@ -42,51 +182,21 @@
         zapSound.play();
       }
 
-      setTimeout(() => {
-        hero.classList.remove('flash');
-      }, 1500);
-    }
-
-    document.querySelector('.title-link').addEventListener('mouseenter', () => {
-      const zapSound = document.getElementById('zap-sound');
-      if (zapSound) {
-        zapSound.currentTime = 0;
-        zapSound.play();
+      // Crack the hum
+      if (gain && osc) {
+        gain.gain.setValueAtTime(0.25, context.currentTime);
+        osc.frequency.setValueAtTime(220, context.currentTime);
+        osc.frequency.linearRampToValueAtTime(58, context.currentTime + 1.5);
+        gain.gain.exponentialRampToValueAtTime(0.015, context.currentTime + 1.5);
       }
-    });
 
-  window.addEventListener('load', () => {
-    const context = new (window.AudioContext || window.webkitAudioContext)();
-
-    // Create base hum oscillator
-    const osc = context.createOscillator();
-    osc.type = 'sine'; // you can also try 'triangle' or 'sawtooth'
-    osc.frequency.value = 58; // low-end frequency, feels physical
-
-    // Create gain for volume control
-    const gain = context.createGain();
-    gain.gain.value = 0.015; // very soft hum
-
-    // Connect and start
-    osc.connect(gain).connect(context.destination);
-    osc.start();
-
-    // Add subtle modulation (like a slight unstable ripple)
-    const lfo = context.createOscillator();
-    const lfoGain = context.createGain();
-
-    lfo.type = 'sine';
-    lfo.frequency.value = 0.3; // slow pulsation
-    lfoGain.gain.value = 0.005; // slight amplitude modulation
-
-    lfo.connect(lfoGain).connect(gain.gain);
-    lfo.start();
-
-    // Ensure sound starts even if autoplay is blocked
-    document.body.addEventListener('click', () => {
-      context.resume();
-    }, { once: true });
-  });
-</script>
+      // Ripple title
+      title.classList.add('ripple');
+      setTimeout(() => {
+        title.classList.remove('ripple');
+        hero.classList.remove('flash');
+      }, 800);
+    }
+  </script>
 </body>
 </html>
