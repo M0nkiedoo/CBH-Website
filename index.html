@@ -16,8 +16,30 @@
       background-color: black;
       font-family: 'Westminster', monospace;
     }
-<div class="flicker-overlay"></div>
-    
+
+    .flicker-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+      animation: flickerFlash 1.8s infinite ease-in-out;
+      z-index: 2;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes flickerFlash {
+      0%, 100% { opacity: 0.02; }
+      10% { opacity: 0.08; }
+      20% { opacity: 0.03; }
+      30% { opacity: 0.10; }
+      40%, 60% { opacity: 0.015; }
+      70% { opacity: 0.07; }
+      85% { opacity: 0.025; }
+      95% { opacity: 0.05; }
+    }
+
     .hero {
       background: url('images/electric-arc-index-bg.png') no-repeat center center;
       background-size: cover;
@@ -26,6 +48,8 @@
       justify-content: center;
       align-items: center;
       transition: filter 1s ease-in-out;
+      z-index: 1;
+      position: relative;
     }
 
     .hero.flash {
@@ -50,6 +74,9 @@
   </style>
 </head>
 <body>
+
+  <div class="flicker-overlay"></div>
+
   <div class="hero" id="hero">
     <a href="theory.html" class="title-link" onclick="flashBackground()">CBH Theory</a>
   </div>
@@ -72,5 +99,6 @@
       }, 1500);
     }
   </script>
+
 </body>
 </html>
