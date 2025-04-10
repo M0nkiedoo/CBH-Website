@@ -64,7 +64,7 @@
     fetch('theory-content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('theory-conten.txt').innerHTML = data;
+        document.getElementById('theory-content.txt').innerHTML = data;
       })
       .catch(err => {
         document.getElementById('theory-content.txt').innerHTML = '<p>Failed to load theory text.</p>';
