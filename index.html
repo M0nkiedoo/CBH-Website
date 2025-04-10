@@ -54,6 +54,39 @@
         zapSound.play();
       }
     });
-  </script>
+
+  window.addEventListener('load', () => {
+    const context = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Create base hum oscillator
+    const osc = context.createOscillator();
+    osc.type = 'sine'; // you can also try 'triangle' or 'sawtooth'
+    osc.frequency.value = 58; // low-end frequency, feels physical
+
+    // Create gain for volume control
+    const gain = context.createGain();
+    gain.gain.value = 0.015; // very soft hum
+
+    // Connect and start
+    osc.connect(gain).connect(context.destination);
+    osc.start();
+
+    // Add subtle modulation (like a slight unstable ripple)
+    const lfo = context.createOscillator();
+    const lfoGain = context.createGain();
+
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.3; // slow pulsation
+    lfoGain.gain.value = 0.005; // slight amplitude modulation
+
+    lfo.connect(lfoGain).connect(gain.gain);
+    lfo.start();
+
+    // Ensure sound starts even if autoplay is blocked
+    document.body.addEventListener('click', () => {
+      context.resume();
+    }, { once: true });
+  });
+</script>
 </body>
 </html>
