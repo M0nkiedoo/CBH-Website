@@ -11,7 +11,7 @@ html, body {
   font-family: 'Westminster', monospace;
 }
 
-/* FLICKER OVERLAY */
+/* Flickering energy overlay */
 .flicker-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -35,7 +35,7 @@ html, body {
   95% { opacity: 0.05; }
 }
 
-/* HERO BACKGROUND */
+/* Hero background */
 .hero {
   background: url('images/electric-arc-index-bg.png') no-repeat center center;
   background-size: cover;
@@ -43,11 +43,16 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: filter 1s ease-in-out;
   z-index: 1;
   position: relative;
 }
 
-/* TITLE LINK */
+.hero.flash {
+  filter: hue-rotate(-120deg) saturate(2);
+}
+
+/* Title link */
 .title-link {
   color: white;
   font-size: 12vw;
@@ -58,8 +63,29 @@ html, body {
      2px -2px 0 #000,
     -2px  2px 0 #000,
      2px  2px 0 #000;
+  position: relative;
+  z-index: 3;
 }
 
 .title-link:hover {
   opacity: 0.8;
+}
+
+/* Lightning bolt pulse */
+.bolt {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 60px;
+  height: 100px;
+  opacity: 0.05;
+  transform: translateX(-50%) rotate(-15deg);
+  animation: pulseBolt 3s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes pulseBolt {
+  0%, 100% { opacity: 0.02; transform: translateX(-50%) rotate(-15deg) scale(1); }
+  50%      { opacity: 0.08; transform: translateX(-50%) rotate(-15deg) scale(1.1); }
 }
