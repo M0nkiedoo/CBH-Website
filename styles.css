@@ -3,40 +3,50 @@
   src: url('fonts/Westminster.ttf') format('truetype');
 }
 
-body, html {
+body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background: black;
+  background: url('images/cbh_background_separate.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent for contrast */
+  backdrop-filter: blur(6px);    /* smooths out stars behind text */
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 10px;
+}
+
+h1 {
   font-family: 'Westminster', monospace;
-}
-
-.hero {
-  background: url('images/hairy-white-hole.jpg') no-repeat center center;
-  background-size: 75%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: filter 0.8s ease-in-out;
-}
-
-.filter-red {
-  filter: hue-rotate(-120deg) saturate(3);
-}
-
-.title-link {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
   color: white;
-  font-size: 12vw;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000;
 }
 
-.title-link:hover {
-  opacity: 0.8;
+a {
+  font-family: 'Westminster', monospace;
+  color: #aaa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
