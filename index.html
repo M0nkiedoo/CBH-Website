@@ -2,24 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CBH Theory</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>CBH Test</title>
 </head>
-<body>
-  <div class="hero" id="hero">
-    <a href="theory.html" class="title-link" onclick="changeBackground()">CBH Theory</a>
+<body style="margin:0; background: black; color: white; font-size: 5vw; height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div>
+    <a href="#" onclick="document.body.style.filter='hue-rotate(180deg)'; setTimeout(() => document.body.style.filter='', 1500);" style="color:white;text-decoration:none;">
+      CBH Theory
+    </a>
   </div>
-
-  <script>
-    function changeBackground() {
-      const hero = document.getElementById('hero');
-      hero.classList.add('filter-red');
-
-      setTimeout(() => {
-        hero.classList.remove('filter-red');
-      }, 1500); // 1.5 seconds later, remove the red tint
-    }
-  </script>
 </body>
 </html>
