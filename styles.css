@@ -1,30 +1,29 @@
 @font-face {
   font-family: 'Westminster';
-  src: url('fonts/Westminster.tff') format('truetype');
+  src: url('fonts/Westminster.ttf') format('truetype');
 }
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Westminster', monospace;
   background: black;
+  font-family: 'Westminster', monospace;
 }
 
 .hero {
   background: url('images/hairy-white-hole.jpg') no-repeat center center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+  background-size: 75%;
   background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: filter 1s ease-in-out;
+  transition: filter 0.8s ease-in-out;
 }
 
-.hero.filter-red {
-  filter: hue-rotate(-90deg) saturate(2);
+.filter-red {
+  filter: hue-rotate(-120deg) saturate(3);
 }
 
 .title-link {
