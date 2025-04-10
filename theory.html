@@ -59,36 +59,17 @@
     <a href="index.html" class="back-link">← Back to homepage</a>
     <h1>CBH Theory</h1>
 
-  <p>The Cosmic Bowel Hypothesis of
-Gravitational Thermodynamics
-    
-Department of Theoretical Excretodynamics, Multiversal Digestive Institute
-
-Abstract
-
-We propose the Cosmic Bowel Hypothesis (CBH), a biologically inspired metaphor for
-black hole–white hole dynamics rooted in gravitational thermodynamics and quantum
-gravity.  In this model, black holes function as the mouths of the universe—ingesting
-matter and information—while white holes are interpreted as transient, reactive ejection
-events akin to the anus of cosmic spacetime.  The singularity serves as the compressive
-digestive core, and Hawking radiation manifests as a thermodynamic burp.
-Framed as a conceptual alternative to static white hole models, CBH posits that white
-holes emerge only when sufficient gravitational “mass-pressure” accumulates, mimicking
-pressure-activated expulsion in biological systems.  This mechanism offers an intuitive
-metaphor for resolving the black hole information paradox, positioning information as the
-fibre of the universe—necessary for maintaining spacetime regularity and avoiding
-cosmic constipation.</p>
-
-  <p>We explore connections to loop quantum gravity, bounce cosmology, and the possibility
-that our own universe was seeded by the white hole ejection of a previous black hole
-system.  While CBH is semi-satirical, it provides a pedagogically useful lens for
-communicating entropy flow, cosmic recycling, and the irrepressible urge of the universe
-to relieve itself.  If future anomalies such as sudden high-entropy ejections, primordial
-gamma bursts, or spontaneous spacetime "hiccups" are observed, CBH offers one
-explanation:
-  <p></p>
-  <p>The universe passed something!</p>
-
-  <p></p>
+<script>
+    // Load theory text from external file
+    fetch('theory-content.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('theory-content').innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById('theory-content').innerHTML = '<p>Failed to load theory text.</p>';
+        console.error('Error loading theory:', err);
+      });
+  </script>
 </body>
 </html>
