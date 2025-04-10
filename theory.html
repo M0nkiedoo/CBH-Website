@@ -64,10 +64,10 @@
     fetch('theory-content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('theory-content.txt').innerHTML = data;
+        document.getElementById('theory-content.html').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('theory-content.txt').innerHTML = '<p>Failed to load theory text.</p>';
+        document.getElementById('theory-content.html').innerHTML = '<p>Failed to load theory text.</p>';
         console.error('Error loading theory:', err);
       });
   </script>
