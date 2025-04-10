@@ -17,7 +17,7 @@
       font-family: 'Westminster', monospace;
     }
 
-    /* Flicker effect overlay */
+    /* Flickering overlay */
     .flicker-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -41,6 +41,7 @@
       95% { opacity: 0.05; }
     }
 
+    /* Hero section */
     .hero {
       background: url('images/electric-arc-index-bg.png') no-repeat center center;
       background-size: cover;
@@ -75,7 +76,7 @@
       opacity: 0.8;
     }
 
-    /* Title ripple animation */
+    /* Ripple effect */
     @keyframes rippleEffect {
       0%   { transform: scale(1) skewX(0deg); }
       25%  { transform: scale(1.1) skewX(5deg); }
@@ -110,21 +111,21 @@
 </head>
 <body>
 
-  <!-- Flicker overlay -->
+  <!-- Flickering background layer -->
   <div class="flicker-overlay"></div>
 
-  <!-- Hero section with ripple title -->
+  <!-- Main visual with arc and title -->
   <div class="hero" id="hero">
     <a href="theory.html" class="title-link" onclick="flashBackground()">CBH Theory</a>
 
-    <!-- Optional lightning bolt pulse -->
+    <!-- Optional lightning bolt SVG -->
     <svg class="bolt" viewBox="0 0 100 100">
       <polyline points="40,0 60,40 45,40 60,100 35,60 50,60 40,0"
                 fill="none" stroke="white" stroke-width="3" />
     </svg>
   </div>
 
-  <!-- Audio assets -->
+  <!-- Sound assets -->
   <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
   <audio id="zap-sound" src="sounds/arc-zap.mp3" preload="auto"></audio>
 
@@ -134,6 +135,7 @@
     window.addEventListener('load', () => {
       context = new (window.AudioContext || window.webkitAudioContext)();
 
+      // Ambient hum oscillator
       osc = context.createOscillator();
       osc.type = 'sine';
       osc.frequency.value = 58;
@@ -144,6 +146,7 @@
       osc.connect(gain).connect(context.destination);
       osc.start();
 
+      // Modulation (LFO) for subtle pulsing
       lfo = context.createOscillator();
       const lfoGain = context.createGain();
       lfo.type = 'sine';
@@ -152,11 +155,12 @@
       lfo.connect(lfoGain).connect(gain.gain);
       lfo.start();
 
+      // Ensure audio resumes if blocked by browser
       document.body.addEventListener('click', () => {
         context.resume();
       }, { once: true });
 
-      // Hover sound
+      // Hover arc zap sound
       document.querySelector('.title-link').addEventListener('mouseenter', () => {
         const zapSound = document.getElementById('zap-sound');
         if (zapSound) {
@@ -182,7 +186,7 @@
         zapSound.play();
       }
 
-      // Crack the hum
+      // CRACK effect — zap the hum
       if (gain && osc) {
         gain.gain.setValueAtTime(0.25, context.currentTime);
         osc.frequency.setValueAtTime(220, context.currentTime);
@@ -190,7 +194,7 @@
         gain.gain.exponentialRampToValueAtTime(0.015, context.currentTime + 1.5);
       }
 
-      // Ripple title
+      // Add ripple effect to the title
       title.classList.add('ripple');
       setTimeout(() => {
         title.classList.remove('ripple');
