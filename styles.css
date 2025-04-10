@@ -102,3 +102,11 @@ html, body {
   0%, 100% { opacity: 0.02; transform: translateX(-50%) rotate(-15deg) scale(1); }
   50%      { opacity: 0.08; transform: translateX(-50%) rotate(-15deg) scale(1.1); }
 }
+/* Electric outline effect for theory content */
+.theory-text {
+  color: #ffffff;
+  text-shadow:
+    0 0 2px #00ffff,
+    0 0 4px #00ffff,
+    0 0 6px #00ffff;
+}
