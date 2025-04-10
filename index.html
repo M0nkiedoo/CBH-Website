@@ -52,10 +52,19 @@
     <a href="theory.html" class="title-link" onclick="flashBackground()">CBH Theory</a>
   </div>
 
+  <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
+
   <script>
     function flashBackground() {
       const hero = document.getElementById('hero');
       hero.classList.add('flash');
+
+      const clickSound = document.getElementById('click-sound');
+      if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      }
+
       setTimeout(() => {
         hero.classList.remove('flash');
       }, 1500);
