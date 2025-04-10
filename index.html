@@ -2,21 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBH Theory</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    @font-face {
+      font-family: 'Westminster';
+      src: url('fonts/Westminster.ttf') format('truetype');
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      font-family: 'Westminster', monospace;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('images/hairy-white-hole.jpg') no-repeat center center;
+      background-size: 75%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: filter 1s ease-in-out;
+    }
+
+    .hero.flash {
+      filter: hue-rotate(-120deg) saturate(2);
+    }
+
+    .title-link {
+      color: white;
+      font-size: 12vw;
+      text-decoration: none;
+      text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+    }
+
+    .title-link:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
   <div class="hero" id="hero">
-    <a href="theory.html" class="title-link" onclick="changeBackground()">CBH Theory</a>
+    <a href="theory.html" class="title-link" onclick="flashBackground()">CBH Theory</a>
   </div>
 
   <script>
-    function changeBackground() {
+    function flashBackground() {
       const hero = document.getElementById('hero');
-      hero.classList.add('filter-red');
+      hero.classList.add('flash');
       setTimeout(() => {
-        hero.classList.remove('filter-red');
+        hero.classList.remove('flash');
       }, 1500);
     }
   </script>
