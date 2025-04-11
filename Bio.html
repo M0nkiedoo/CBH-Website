@@ -57,23 +57,23 @@
 <body>
   <div class="container">
     <a href="index.html" class="back-link">← Back to homepage</a>
-    <h1>CBH Theory</h1>
+    <h1>Bio</h1>
 
     <!-- Add a div to receive the external content -->
-    <div id="Bio-Content.html">
-      <p><em>Loading theory...</em></p>
+    <div id="Bio-content.html">
+      <p><em>Loading Bio...</em></p>
     </div>
   </div>
 
   <script>
     // Load Bio text from external file
-    fetch('Bio-Content.html')
+    fetch('Bio-content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('Bio-Content').innerHTML = data;
+        document.getElementById('Bio-content').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('Bio-Content').innerHTML = '<p>Failed to load Bio text.</p>';
+        document.getElementById('Bio-content').innerHTML = '<p>Failed to load Bio text.</p>';
         console.error('Error loading theory:', err);
       });
   </script>
