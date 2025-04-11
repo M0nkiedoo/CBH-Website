@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CBH Theory</title>
+  <title>Bio</title>
   <style>
     @font-face {
       font-family: 'Westminster';
@@ -60,20 +60,20 @@
     <h1>Bio</h1>
 
     <!-- Add a div to receive the external content -->
-    <div id="Bio-content.html">
+    <div id="Bio-Content.html">
       <p><em>Loading Bio...</em></p>
     </div>
   </div>
 
   <script>
     // Load Bio text from external file
-    fetch('Bio-content.html')
+    fetch('Bio-Content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('Bio-content').innerHTML = data;
+        document.getElementById('Bio-Content').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('Bio-content').innerHTML = '<p>Failed to load Bio text.</p>';
+        document.getElementById('Bio-Content').innerHTML = '<p>Failed to load Bio text.</p>';
         console.error('Error loading theory:', err);
       });
   </script>
