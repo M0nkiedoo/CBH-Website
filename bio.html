@@ -2,32 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>bio</title>
+  <title>Bio</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    @font-face {
-      font-family: 'Westminster';
-      src: url('fonts/Westminster.ttf') format('truetype');
-    }
-
     body {
-      margin: 0;
-      padding: 0;
       background: url('images/cosmic-background.png') no-repeat center center fixed;
       background-size: cover;
-      color: #eee;
       font-family: Helvetica, Arial, sans-serif;
       font-size: 2.5rem;
       line-height: 3;
     }
-
-    .container {
-      background: rgba(0, 0, 0, 0.1); /* transparent black to float text */
-      max-width: 70%;
-      margin: 0 auto;
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
     h1 {
       font-family: 'Westminster', monospace;
       font-size: 5rem;
@@ -35,48 +19,28 @@
       margin-bottom: 2rem;
       color: white;
     }
-
-    a {
-      font-family: 'Westminster', monospace;
-      color: #aaa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="index.html" class="back-link">← Back to homepage</a>
-    <h1>bio</h1>
+    <h1>Bio</h1>
 
-    <!-- Add a div to receive the external content -->
-    <div id="bio-content.html">
+    <div id="bio-content" class="theory-text">
       <p><em>Loading bio...</em></p>
     </div>
   </div>
 
   <script>
-    // Load bio text from external file
     fetch('bio-content.html')
       .then(response => response.text())
       .then(data => {
-    
+        document.getElementById('bio-content').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('bio-Content.html').innerHTML = '<p>Failed to load bio text.</p>';
-        console.error('Error loading theory:', err);
+        document.getElementById('bio-content').innerHTML = '<p>Failed to load bio text.</p>';
+        console.error('Error loading bio:', err);
       });
   </script>
 </body>
 </html>
-
