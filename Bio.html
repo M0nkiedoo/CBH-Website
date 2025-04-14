@@ -70,10 +70,10 @@
     fetch('Bio-content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('Bio-content').innerHTML = data;
+        document.getElementById('Bio-Content.html').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('Bio-content').innerHTML = '<p>Failed to load Bio text.</p>';
+        document.getElementById('Bio-Content.html').innerHTML = '<p>Failed to load Bio text.</p>';
         console.error('Error loading theory:', err);
       });
   </script>
