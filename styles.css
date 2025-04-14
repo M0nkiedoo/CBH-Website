@@ -98,7 +98,7 @@ html, body {
   z-index: 2;
 }
 
-@keyframes pulseGlow {
+/*@keyframes pulseGlow {
   0%, 100% {
     text-shadow:
       0 0 1px #ffffff,
@@ -113,12 +113,12 @@ html, body {
 
 .pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
-}
+} */
 /* Electric outline effect for theory content */
-.theory-text {
+/*.theory-text {
   color: #ffffff;
   text-shadow:
     0 0 2px #00ffff,
     0 0 4px #00ffff,
-    0 0 6px #00ffff;
+    0 0 6px #00ffff; */
 }
