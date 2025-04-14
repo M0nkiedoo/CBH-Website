@@ -98,9 +98,21 @@ html, body {
   z-index: 2;
 }
 
-@keyframes pulseBolt {
-  0%, 100% { opacity: 0.02; transform: translateX(-50%) rotate(-15deg) scale(1); }
-  50%      { opacity: 0.08; transform: translateX(-50%) rotate(-15deg) scale(1.1); }
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 1px #00bcd4,
+      0 0 2px #00bcd4;
+  }
+  50% {
+    text-shadow:
+      0 0 2px #00bcd4,
+      0 0 3px #00bcd4;
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 /* Electric outline effect for theory content */
 .theory-text {
