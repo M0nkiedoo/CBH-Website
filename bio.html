@@ -70,7 +70,7 @@
     fetch('bio-content.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('bio-Content.html').innerHTML = data;
+    
       })
       .catch(err => {
         document.getElementById('bio-Content.html').innerHTML = '<p>Failed to load bio text.</p>';
