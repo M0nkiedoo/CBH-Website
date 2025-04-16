@@ -43,10 +43,10 @@
   fetch('Chapter1-content.html') // ← Change this to match the page
     .then(response => response.text())
     .then(data => {
-      document.getElementById('chapter1-content').innerHTML = data;
+      document.getElementById('Chapter1-content').innerHTML = data;
     })
     .catch(err => {
-      document.getElementById('chapter1-content').innerHTML = '<p>Failed to load content.</p>';
+      document.getElementById('Chapter1-content').innerHTML = '<p>Failed to load content.</p>';
       console.error('Error loading content:', err);
     });
 </script>
