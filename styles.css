@@ -62,7 +62,7 @@ h1 {
   color: white;
 }
 
-/* Paragraph indent only inside content blocks */
+/* Paragraph indent only inside general content blocks (theory, bio, etc.) */
 .cbh-content p {
   text-indent: 2em;
   margin-bottom: 1.5rem;
@@ -77,11 +77,14 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* References Section */
 .references {
   padding-top: 2rem;
 }
 
-.references p {
+/* Only apply hanging indent to p.indent (not all paragraphs) */
+.references p.indent {
   padding-left: 2em;
   text-indent: -2em;
   margin-bottom: 1.2rem;
