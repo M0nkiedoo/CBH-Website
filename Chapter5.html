@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapter5</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @font-face {
+      font-family: 'Westminster';
+      src: url('fonts/Westminster.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/cosmic-background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2.5rem;
+      line-height: 3;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.1); /* transparent black to float text */
+      max-width: 70%;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: 'Westminster', monospace;
+      font-size: 5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    a {
+      font-family: 'Westminster', monospace;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .Chapter5-text {
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2.5rem;
+      line-height: 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to homepage</a>
+    <h1>Chapter5</h1>
+
+    <div id="Chapter5-content" class="Chapter5-text">
+      <p><em>Loading Chapter5...</em></p>
+    </div>
+  </div>
+
+  <script>
+    fetch('Chapter5-content.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('Chapter5-content').innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById('Chapter5-content').innerHTML = '<p>Failed to load Chapter5 text.</p>';
+        console.error('Error loading Chapter5:', err);
+      });
+  </script>
+</body>
+</html>
+
 
