@@ -3,7 +3,7 @@
   src: url('fonts/Westminster.ttf') format('truetype');
 }
 
-/* Base Layout */
+/* Base layout and background */
 html, body {
   margin: 0;
   padding: 0;
@@ -45,7 +45,7 @@ html, body {
   text-shadow: 0 0 5px #ffaa33, 0 0 10px #ff6600;
 }
 
-/* Main Content Container */
+/* Page content container */
 .container {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
@@ -55,7 +55,7 @@ html, body {
   min-height: 100vh;
 }
 
-/* Title Styling */
+/* Page title */
 h1 {
   font-family: 'Westminster', monospace;
   font-size: 5rem;
@@ -64,14 +64,14 @@ h1 {
   color: white;
 }
 
-/* Content Paragraphs (for theory, bio, etc.) */
+/* Paragraphs for theory, bio, and chapters */
 .cbh-content p {
   text-indent: 2em;
   margin-bottom: 1.5rem;
   color: white;
 }
 
-/* General Links */
+/* General link styling */
 a {
   font-family: 'Westminster', monospace;
   color: #aaa;
@@ -82,17 +82,30 @@ a:hover {
   text-decoration: underline;
 }
 
-/* References Section (non-indented by default) */
+/* References Section */
 .references {
   padding-top: 2rem;
 }
 
-/* Hanging Indent — apply only where needed */
-.references p.indent {
-  padding-left: 2em;
-  text-indent: -2em;
+/* Reset all reference paragraphs */
+.references p {
+  padding: 0;
   margin-bottom: 1.2rem;
   font-size: 1.125rem;
   line-height: 1.6;
   color: #eee;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+/* Only indent specific reference entries */
+.references p.indent {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+/* Force no-indent for specific lines */
+.references p.no-indent {
+  padding-left: 0;
+  text-indent: 0;
 }
