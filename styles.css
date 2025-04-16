@@ -148,3 +148,10 @@ html, body {
   color: #fff;
   text-shadow: 0 0 5px #00ffff;
 }
+.container {
+  background: rgba(0, 0, 0, 0.1);
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
