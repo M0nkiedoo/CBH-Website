@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>C B H Theory</title>
+  <title>CBH Theory</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* only font-face here — everything else in styles.css */
     @font-face {
       font-family: 'Westminster';
       src: url('fonts/Westminster.ttf') format('truetype');
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Fixed Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="cbh-nav">
     <a href="index.html">Home</a>
+    <a href="theory.html">Theory</a>
     <a href="Chapter1.html">Chapter 1</a>
     <a href="Chapter2.html">Chapter 2</a>
     <a href="Chapter3.html">Chapter 3</a>
@@ -30,7 +31,7 @@
     <a href="references.html">References</a>
   </nav>
 
-  <!-- Page Content: always starts below the fixed nav -->
+  <!-- Page Content -->
   <div class="container">
     <h1>CBH Theory</h1>
     <div id="theory-content" class="cbh-content">
@@ -41,14 +42,13 @@
   <!-- Load theory text -->
   <script>
     fetch('theory-content.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('theory-content').innerHTML = html;
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('theory-content').innerHTML = data;
       })
       .catch(err => {
-        document.getElementById('theory-content').innerHTML =
-          '<p>Failed to load theory text.</p>';
-        console.error(err);
+        document.getElementById('theory-content').innerHTML = '<p>Failed to load theory text.</p>';
+        console.error('Error loading theory:', err);
       });
   </script>
 
