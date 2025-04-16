@@ -150,6 +150,7 @@ html, body {
 }
 .container {
   background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px); /* ← this adds the continued fade effect */
   max-width: 70%;
   margin: 0 auto;
   padding: 2rem;
