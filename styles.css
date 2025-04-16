@@ -15,7 +15,7 @@ html, body {
   line-height: 1.8;
 }
 
-/* FIXED Navigation Bar */
+/* Fixed Nav Bar */
 .cbh-nav {
   position: fixed;
   top: 0;
@@ -26,7 +26,7 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  background: linear-gradient(to right, rgba(255, 180, 0, 0.4), rgba(255, 80, 0, 0.4), rgba(0, 0, 0, 0.5));
+  background: rgba(255, 180, 0, 0.3); /* Solar flare effect */
   padding: 1rem 2rem;
   font-family: 'Westminster', monospace;
   font-size: 1.5rem;
@@ -40,21 +40,20 @@ html, body {
 }
 .cbh-nav a:hover {
   color: #fff;
-  text-shadow: 0 0 5px #00ffff;
+  text-shadow: 0 0 5px #ffaa33, 0 0 10px #ff6600;
 }
 
-/* Main Content Container */
+/* Main content container */
 .container {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   max-width: 70%;
   margin: 0 auto;
-  /* push everything down so it never goes under the fixed nav */
   padding: 6rem 2rem 2rem;
   min-height: 100vh;
 }
 
-/* Page Title */
+/* Title */
 h1 {
   font-family: 'Westminster', monospace;
   font-size: 5rem;
@@ -63,14 +62,13 @@ h1 {
   color: white;
 }
 
-/* Paragraphs */
-p {
-  font-size: 1.125rem;
-  line-height: 1.8;
+/* Paragraph indent only inside content blocks */
+.cbh-content p {
+  text-indent: 2em;
   margin-bottom: 1.5rem;
 }
 
-/* General Links */
+/* General links */
 a {
   font-family: 'Westminster', monospace;
   color: #aaa;
@@ -78,11 +76,4 @@ a {
 }
 a:hover {
   text-decoration: underline;
-}
-p.indent {
-  text-indent: 2em;
-}
-
-.cbh-content p {
-  text-indent: 2em;
 }
