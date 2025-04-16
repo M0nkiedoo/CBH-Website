@@ -32,25 +32,24 @@
 
   <!-- Page Content: always starts below the fixed nav -->
   <div class="container">
-    <h1>CBH Bio</h1>
-    <div id="bio-content">
-      <p><em>Loading Epilogue...</em></p>
-    </div>
-  </div>
+  <h1>Bio</h1> <!-- or Chapter X, References, etc. -->
 
-  <!-- Load Epilogue text -->
-  <script>
-    fetch('bio-content.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('bio-content').innerHTML = html;
-      })
-      .catch(err => {
-        document.getElementById('bio-content').innerHTML =
-          '<p>Failed to load Bio text.</p>';
-        console.error(err);
-      });
-  </script>
+  <div id="bio-content" class="cbh-content">
+    <p><em>Loading bio...</em></p>
+  </div>
+</div>
+
+<script>
+  fetch('bio-content.html') // ← Change this to match the page
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('bio-content').innerHTML = data;
+    })
+    .catch(err => {
+      document.getElementById('bio-content').innerHTML = '<p>Failed to load content.</p>';
+      console.error('Error loading content:', err);
+    });
+</script>
 
 </body>
 </html>
