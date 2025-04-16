@@ -2,86 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>References</title>
+  <title>CBH References</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* only font-face here — everything else in styles.css */
     @font-face {
       font-family: 'Westminster';
       src: url('fonts/Westminster.ttf') format('truetype');
     }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('images/cosmic-background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 2.5rem;
-      line-height: 3;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.1); /* transparent black to float text */
-      max-width: 70%;
-      margin: 0 auto;
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
-    h1 {
-      font-family: 'Westminster', monospace;
-      font-size: 5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: white;
-    }
-
-    a {
-      font-family: 'Westminster', monospace;
-      color: #aaa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
-    }
-
-    .references-text {
-      color: white;
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 2.5rem;
-      line-height: 3;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="back-link">← Back to homepage</a>
-    <h1>references</h1>
 
-    <div id="references-content" class="references-text">
-      <p><em>Loading references...</em></p>
+  <!-- Fixed Navigation Bar -->
+  <nav class="cbh-nav">
+    <a href="index.html">Home</a>
+    <a href="theory.html">Theory</a>
+    <a href="Chapter1.html">Chapter 1</a>
+    <a href="Chapter2.html">Chapter 2</a>
+    <a href="Chapter3.html">Chapter 3</a>
+    <a href="Chapter4.html">Chapter 4</a>
+    <a href="Chapter5.html">Chapter 5</a>
+    <a href="Chapter6.html">Chapter 6</a>
+    <a href="Chapter7.html">Chapter 7</a>
+    <a href="Chapter8.html">Chapter 8</a>
+    <a href="epilogue.html">Epilogue</a>
+    <a href="bio.html">Bio</a>
+  </nav>
+
+  <!-- Page Content: always starts below the fixed nav -->
+  <div class="container">
+    <h1>CBH References</h1>
+    <div id="references-content">
+      <p><em>Loading References...</em></p>
     </div>
   </div>
 
+  <!-- Load References text -->
   <script>
     fetch('references-content.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('references-content').innerHTML = data;
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('references-content').innerHTML = html;
       })
       .catch(err => {
-        document.getElementById('references-content').innerHTML = '<p>Failed to load references text.</p>';
-        console.error('Error loading references:', err);
+        document.getElementById('references-content').innerHTML =
+          '<p>Failed to load References text.</p>';
+        console.error(err);
       });
   </script>
+
 </body>
 </html>
