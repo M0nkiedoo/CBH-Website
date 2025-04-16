@@ -122,3 +122,26 @@ html, body {
     0 0 4px #00ffff,
     0 0 6px #00ffff; */
 }
+
+.cbh-nav {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  font-family: 'Westminster', monospace;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cbh-nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 1.8rem;
+}
+
+.cbh-nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 4px #00ffff;
+}
