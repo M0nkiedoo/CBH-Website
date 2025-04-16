@@ -17,7 +17,6 @@
   <!-- Fixed Navigation Bar -->
   <nav class="cbh-nav">
     <a href="index.html">Home</a>
-    <a href="Chapter1.html">Chapter 1</a>
     <a href="Chapter2.html">Chapter 2</a>
     <a href="Chapter3.html">Chapter 3</a>
     <a href="Chapter4.html">Chapter 4</a>
@@ -40,7 +39,7 @@
 
   <!-- Load Chapter1 text -->
   <script>
-    fetch('chapter1-content.html')
+    fetch('Chapter1-content.html')
       .then(r => r.text())
       .then(html => {
         document.getElementById('Chapter1-content').innerHTML = html;
