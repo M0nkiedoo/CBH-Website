@@ -131,11 +131,11 @@ html, body {
   background: rgba(0, 0, 0, 0.4);
   padding: 1rem 2rem;
   font-family: 'Westminster', monospace;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   backdrop-filter: blur(6px);
-  z-index: 100;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .cbh-nav a {
