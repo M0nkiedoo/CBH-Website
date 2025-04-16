@@ -15,10 +15,12 @@ html, body {
   line-height: 1.8;
 }
 
-/* Sticky Navigation Bar */
+/* FIXED Navigation Bar */
 .cbh-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +38,6 @@ html, body {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .cbh-nav a:hover {
   color: #fff;
   text-shadow: 0 0 5px #00ffff;
@@ -48,11 +49,12 @@ html, body {
   backdrop-filter: blur(4px);
   max-width: 70%;
   margin: 0 auto;
-  padding: 6rem 2rem 2rem; /* 6rem top to clear sticky nav */
+  /* push everything down so it never goes under the fixed nav */
+  padding: 6rem 2rem 2rem;
   min-height: 100vh;
 }
 
-/* Headings */
+/* Page Title */
 h1 {
   font-family: 'Westminster', monospace;
   font-size: 5rem;
@@ -61,7 +63,7 @@ h1 {
   color: white;
 }
 
-/* Paragraph Styling */
+/* Paragraphs */
 p {
   font-size: 1.125rem;
   line-height: 1.8;
@@ -74,7 +76,6 @@ a {
   color: #aaa;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
