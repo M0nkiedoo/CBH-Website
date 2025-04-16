@@ -30,27 +30,29 @@
     <a href="references.html">References</a>
   </nav>
 
-  <!-- Page Content: always starts below the fixed nav -->
+    <!-- Page Content: always starts below the fixed nav -->
   <div class="container">
-    <h1>CBH Chapter Three</h1>
-    <div id="Chapter3-content">
-      <p><em>Loading Chapter Three...</em></p>
-    </div>
-  </div>
+  <h1>Chapter Three</h1> <!-- or Chapter X, References, etc. -->
 
-  <!-- Load Chapter3 text -->
-  <script>
-    fetch('Chapter3-content.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('Chapter3-content').innerHTML = html;
-      })
-      .catch(err => {
-        document.getElementById('Chapter3-content').innerHTML =
-          '<p>Failed to load Chapter Three text.</p>';
-        console.error(err);
-      });
-  </script>
+  <div id="Chapter3-content" class="cbh-content">
+    <p><em>Loading Chapter Three...</em></p>
+  </div>
+</div>
+
+<script>
+  fetch('Chapter3-content.html') // ← Change this to match the page
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('Chapter3-content').innerHTML = data;
+    })
+    .catch(err => {
+      document.getElementById('Chapter3-content').innerHTML = '<p>Failed to load content.</p>';
+      console.error('Error loading content:', err);
+    });
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
