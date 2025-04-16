@@ -11,12 +11,15 @@ html, body {
   background-size: cover;
   color: white;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.125rem;  /* ~18px base text */
+  font-size: 1.125rem;
   line-height: 1.8;
 }
 
-/* Navigation Bar */
+/* Sticky Navigation Bar */
 .cbh-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -26,9 +29,6 @@ html, body {
   font-family: 'Westminster', monospace;
   font-size: 1.5rem;
   backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .cbh-nav a {
@@ -42,17 +42,17 @@ html, body {
   text-shadow: 0 0 5px #00ffff;
 }
 
-/* Main Page Container */
+/* Main Content Container */
 .container {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   max-width: 70%;
   margin: 0 auto;
-  padding: 6rem 2rem 2rem; /* top padding to keep nav floating */
+  padding: 6rem 2rem 2rem; /* 6rem top to clear sticky nav */
   min-height: 100vh;
 }
 
-/* Page Title */
+/* Headings */
 h1 {
   font-family: 'Westminster', monospace;
   font-size: 5rem;
@@ -61,7 +61,7 @@ h1 {
   color: white;
 }
 
-/* Paragraph Text */
+/* Paragraph Styling */
 p {
   font-size: 1.125rem;
   line-height: 1.8;
