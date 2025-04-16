@@ -82,3 +82,7 @@ a:hover {
 p.indent {
   text-indent: 2em;
 }
+
+.cbh-content p {
+  text-indent: 2em;
+}
