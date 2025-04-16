@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>CBH Theory</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     @font-face {
       font-family: 'Westminster';
@@ -21,7 +22,7 @@
     }
 
     .container {
-      background: rgba(0, 0, 0, 0.1); /* transparent black to float text */
+      background: rgba(0, 0, 0, 0.1);
       max-width: 70%;
       margin: 0 auto;
       padding: 2rem;
@@ -36,28 +37,37 @@
       color: white;
     }
 
-    a {
+    .cbh-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem 2rem;
       font-family: 'Westminster', monospace;
-      color: #aaa;
+      font-size: 1.5rem;
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .cbh-nav a {
+      color: #ccc;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
+    .cbh-nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #00ffff;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <a href="index.html" class="back-link">← Back to homepage</a>
-    
+
+  <!-- Navigation Bar -->
   <nav class="cbh-nav">
     <a href="index.html">Home</a>
     <a href="theory.html">Theory</a>
@@ -74,20 +84,16 @@
     <a href="references.html">References</a>
   </nav>
 
+  <!-- Page Content -->
   <div class="container">
-    <!-- theory content starts here -->
-  </div>
-    
     <h1>CBH Theory</h1>
-
-    <!-- Add a div to receive the external content -->
     <div id="theory-content">
       <p><em>Loading theory...</em></p>
     </div>
   </div>
 
+  <!-- Load theory content dynamically -->
   <script>
-    // Load theory text from external file
     fetch('theory-content.html')
       .then(response => response.text())
       .then(data => {
@@ -99,21 +105,5 @@
       });
   </script>
 
-<nav class="cbh-nav">
-  <a href="index.html">Home</a>
-  <a href="theory.html">Theory</a>
-  <a href="Chapter1.html">Chapter 1</a>
-  <a href="Chapter2.html">Chapter 2</a>
-  <a href="Chapter3.html">Chapter 3</a>
-  <a href="Chapter4.html">Chapter 4</a>
-  <a href="Chapter5.html">Chapter 5</a>
-  <a href="Chapter6.html">Chapter 6</a>
-  <a href="Chapter7.html">Chapter 7</a>
-  <a href="Chapter8.html">Chapter 8</a>
-  <a href="epilogue.html">Epilogue</a>
-  <a href="bio.html">Bio</a>
-  <a href="references.html">References</a>
-</nav>
-  
 </body>
 </html>
