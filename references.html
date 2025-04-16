@@ -30,26 +30,7 @@
     <a href="bio.html">Bio</a>
   </nav>
 
-  <!-- Page Content: always starts below the fixed nav -->
-  <div class="container">
-  <h1>References</h1> <!-- or Chapter X, References, etc. -->
 
-  <div id="references-content" class="cbh-content">
-    <p><em>Loading References...</em></p>
-  </div>
-</div>
-
-<script>
-  fetch('references-content.html') // ← Change this to match the page
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('references-content').innerHTML = data;
-    })
-    .catch(err => {
-      document.getElementById('references-content').innerHTML = '<p>Failed to load content.</p>';
-      console.error('Error loading content:', err);
-    });
-</script>
 
 </body>
 </html>
