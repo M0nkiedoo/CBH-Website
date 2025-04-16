@@ -77,3 +77,15 @@ a {
 a:hover {
   text-decoration: underline;
 }
+.references {
+  padding-top: 2rem;
+}
+
+.references p {
+  padding-left: 2em;
+  text-indent: -2em;
+  margin-bottom: 1.2rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #eee;
+}
