@@ -7,122 +7,15 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: black;
-  font-family: 'Westminster', monospace;
-}
-
-/* Flickering overlay */
-.flicker-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.03);
-  pointer-events: none;
-  animation: flickerFlash 1.8s infinite ease-in-out;
-  z-index: 2;
-  mix-blend-mode: screen;
-}
-
-@keyframes flickerFlash {
-  0%, 100% { opacity: 0.02; }
-  10% { opacity: 0.08; }
-  20% { opacity: 0.03; }
-  30% { opacity: 0.10; }
-  40%, 60% { opacity: 0.015; }
-  70% { opacity: 0.07; }
-  85% { opacity: 0.025; }
-  95% { opacity: 0.05; }
-}
-
-/* Hero background with arc image */
-.hero {
-  background: url('images/electric-arc-index-bg.png') no-repeat center center;
+  background: url('images/cosmic-background.png') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: filter 1s ease-in-out;
-  z-index: 1;
-  position: relative;
-}
-
-.hero.flash {
-  filter: hue-rotate(-120deg) saturate(2);
-}
-
-/* Title link */
-.title-link {
   color: white;
-  font-size: 12vw;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000;
-  position: relative;
-  z-index: 3;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  line-height: 3;
 }
 
-.title-link:hover {
-  opacity: 0.8;
-}
-
-/* Ripple effect on title */
-@keyframes rippleEffect {
-  0%   { transform: scale(1) skewX(0deg); }
-  25%  { transform: scale(1.1) skewX(5deg); }
-  50%  { transform: scale(0.95) skewX(-4deg); }
-  75%  { transform: scale(1.05) skewX(3deg); }
-  100% { transform: scale(1) skewX(0deg); }
-}
-
-.ripple {
-  animation: rippleEffect 0.8s ease-in-out;
-}
-
-/* Lightning bolt SVG animation */
-.bolt {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  width: 60px;
-  height: 100px;
-  opacity: 0.05;
-  transform: translateX(-50%) rotate(-15deg);
-  animation: pulseBolt 3s infinite ease-in-out;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/*@keyframes pulseGlow {
-  0%, 100% {
-    text-shadow:
-      0 0 1px #ffffff,
-      0 0 2px #ffffff;
-  }
-  50% {
-    text-shadow:
-      0 0 2px #ffffff,
-      0 0 3px #ffffff;
-  }
-}
-
-.pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
-} */
-/* Electric outline effect for theory content */
-/*.theory-text {
-  color: #ffffff;
-  text-shadow:
-    0 0 2px #00ffff,
-    0 0 4px #00ffff,
-    0 0 6px #00ffff; */
-}
-
+/* Sticky Navigation Bar */
 .cbh-nav {
   display: flex;
   flex-wrap: wrap;
@@ -148,11 +41,33 @@ html, body {
   color: #fff;
   text-shadow: 0 0 5px #00ffff;
 }
+
+/* Content Container */
 .container {
   background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px); /* ← this adds the continued fade effect */
+  backdrop-filter: blur(4px); /* enables background fade */
   max-width: 70%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 6rem 2rem 2rem; /* top padding prevents nav overlap */
   min-height: 100vh;
+}
+
+/* Page Titles */
+h1 {
+  font-family: 'Westminster', monospace;
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+/* General Links */
+a {
+  font-family: 'Westminster', monospace;
+  color: #aaa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
