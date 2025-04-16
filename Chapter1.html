@@ -17,7 +17,7 @@
   <!-- Fixed Navigation Bar -->
   <nav class="cbh-nav">
     <a href="index.html">Home</a>
-    <a href="theory.html">Theory</a>
+    <a href="Chapter1.html">Chapter 1</a>
     <a href="Chapter2.html">Chapter 2</a>
     <a href="Chapter3.html">Chapter 3</a>
     <a href="Chapter4.html">Chapter 4</a>
@@ -33,12 +33,12 @@
   <!-- Page Content: always starts below the fixed nav -->
   <div class="container">
     <h1>CBH Chapter One</h1>
-    <div id="theory-content">
-      <p><em>Loading theory...</em></p>
+    <div id="Chapter1-content">
+      <p><em>Loading Chapter One...</em></p>
     </div>
   </div>
 
-  <!-- Load theory text -->
+  <!-- Load Chapter1 text -->
   <script>
     fetch('Chapter1-content.html')
       .then(r => r.text())
@@ -46,7 +46,7 @@
         document.getElementById('Chapter1-content').innerHTML = html;
       })
       .catch(err => {
-        document.getElementById('Chaopter1-content').innerHTML =
+        document.getElementById('Chapter1-content').innerHTML =
           '<p>Failed to load Chapter One text.</p>';
         console.error(err);
       });
