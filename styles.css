@@ -26,7 +26,7 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, rgba(255, 180, 0, 0.4), rgba(255, 80, 0, 0.4), rgba(0, 0, 0, 0.5));
   padding: 1rem 2rem;
   font-family: 'Westminster', monospace;
   font-size: 1.5rem;
