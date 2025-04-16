@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CBH Chapter 1</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* only font-face here — everything else in styles.css */
+    @font-face {
+      font-family: 'Westminster';
+      src: url('fonts/Westminster.ttf') format('truetype');
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Navigation Bar -->
+  <nav class="cbh-nav">
+    <a href="index.html">Home</a>
+    <a href="chapter1.html">Chapter 1</a>
+    <a href="chapter2.html">Chapter 2</a>
+    <a href="chapter3.html">Chapter 3</a>
+    <a href="chapter4.html">Chapter 4</a>
+    <a href="chapter5.html">Chapter 5</a>
+    <a href="chapter6.html">Chapter 6</a>
+    <a href="chapter7.html">Chapter 7</a>
+    <a href="chapter8.html">Chapter 8</a>
+    <a href="epilogue.html">Epilogue</a>
+    <a href="bio.html">Bio</a>
+    <a href="references.html">References</a>
+  </nav>
+
+  <!-- Page Content: always starts below the fixed nav -->
+  <div class="container">
+    <h1>CBH Chapter 1</h1>
+    <div id="epilogue-content">
+      <p><em>Loading epilogue...</em></p>
+    </div>
+  </div>
+
+  <!-- Load epilogue text -->
+  <script>
+    fetch('epilogue-content.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('epilogue-content').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('epilogue-content').innerHTML =
+          '<p>Failed to load epilogue text.</p>';
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>epilogue</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @font-face {
+      font-family: 'Westminster';
+      src: url('fonts/Westminster.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/cosmic-background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2.5rem;
+      line-height: 3;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.1); /* transparent black to float text */
+      max-width: 70%;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: 'Westminster', monospace;
+      font-size: 5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    a {
+      font-family: 'Westminster', monospace;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .epilogue-text {
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2.5rem;
+      line-height: 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to homepage</a>
+    <h1>Epilogue</h1>
+
+    <div id="epilogue-content" class="epilogue-text">
+      <p><em>Loading epilogue...</em></p>
+    </div>
+  </div>
+
+  <script>
+    fetch('epilogue-content.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('epilogue-content').innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById('epilogue-content').innerHTML = '<p>Failed to load epilogue text.</p>';
+        console.error('Error loading epilogue:', err);
+      });
+  </script>
+</body>
+</html>
+
 
