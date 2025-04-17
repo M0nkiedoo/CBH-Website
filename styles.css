@@ -111,3 +111,62 @@ a:hover {
   padding-left: 0;
   text-indent: 0;
 }
+.theory-page {
+  background: url('images/backgrounds/milkyway1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter1-page {
+  background: url('images/backgrounds/milkyway2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter2-page {
+  background: url('images/backgrounds/milkyway3.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter3-page {
+  background: url('images/backgrounds/milkyway4.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter4-page {
+  background: url('images/backgrounds/earthrisen.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter5-page {
+  background: url('images/backgrounds/gasclouds2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter6-page {
+  background: url('images/backgrounds/gasclouds1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter7-page {
+  background: url('images/backgrounds/gasclouds3.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.chapter8-page {
+  background: url('images/backgrounds/moonrise.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.epilogue-page {
+  background: url('images/backgrounds/universe.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.bio-page {
+  background: url('images/backgrounds/dust1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.references-page {
+  background: url('images/backgrounds/dust2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
