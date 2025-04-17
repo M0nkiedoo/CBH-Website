@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'Westminster';
+  src: url('fonts/Westminster.ttf') format('truetype');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: black;
+  font-family: 'Westminster', monospace;
+}
+
 .hero {
   position: relative;
   background: url('images/electric-arc-index-bg.png') no-repeat center center;
@@ -11,7 +24,11 @@
   overflow: hidden;
 }
 
-/* Mid-layer Planck overlay image */
+.hero.flash {
+  filter: hue-rotate(-120deg) saturate(2);
+}
+
+/* Optional overlay (Planck data or other) */
 .arc-overlay {
   background: url('images/planck.png') no-repeat center center;
   background-size: contain;
@@ -21,11 +38,10 @@
   width: 100%;
   height: 100%;
   z-index: 2;
-  opacity: 0.6;
+  opacity: 0.5;
   pointer-events: none;
 }
 
-/* Title text layer */
 .title-link {
   position: relative;
   z-index: 3;
@@ -42,4 +58,59 @@
 
 .title-link:hover {
   opacity: 0.8;
+}
+
+.bolt {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 60px;
+  height: 100px;
+  opacity: 0.05;
+  transform: translateX(-50%) rotate(-15deg);
+  animation: pulseBolt 3s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes pulseBolt {
+  0%, 100% { opacity: 0.02; transform: scale(1); }
+  50% { opacity: 0.08; transform: scale(1.1); }
+}
+
+@keyframes rippleEffect {
+  0% { transform: scale(1) skewX(0deg); }
+  25% { transform: scale(1.1) skewX(5deg); }
+  50% { transform: scale(0.95) skewX(-4deg); }
+  75% { transform: scale(1.05) skewX(3deg); }
+  100% { transform: scale(1) skewX(0deg); }
+}
+
+.ripple {
+  animation: rippleEffect 0.8s ease-in-out;
+}
+
+/* Flicker overlay */
+.flicker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  animation: flickerFlash 1.8s infinite ease-in-out;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+@keyframes flickerFlash {
+  0%, 100% { opacity: 0.02; }
+  10% { opacity: 0.08; }
+  20% { opacity: 0.03; }
+  30% { opacity: 0.10; }
+  40%, 60% { opacity: 0.015; }
+  70% { opacity: 0.07; }
+  85% { opacity: 0.025; }
+  95% { opacity: 0.05; }
 }
