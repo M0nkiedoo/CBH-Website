@@ -97,6 +97,7 @@ a:hover {
   color: #eee;
   text-indent: 0;
   padding-left: 0;
+  text-align: justify;
 }
 
 /* Only indent specific reference entries */
