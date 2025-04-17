@@ -42,17 +42,17 @@
     }
 
     /* Hero section */
-    .hero {
-      background: url('images/electric-arc-index-bg.png') no-repeat center center;
-      background-size: 90%;
-      height: 90%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: filter 1s ease-in-out;
-      z-index: 1;
-      position: relative;
-    }
+   .hero {
+  background: url('images/electric-arc-index-bg.png') no-repeat center center;
+  background-size: contain;           /* Ensures the whole image is visible */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;            /* fallback color */
+  height: 100vh;                      /* Full screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
     .hero.flash {
       filter: hue-rotate(-120deg) saturate(2);
