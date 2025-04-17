@@ -171,13 +171,13 @@ a:hover {
 }
 
 .bio-page {
-  background: url('images/images/backgrounds/dust1.jpg') no-repeat center center fixed;
+  background: url('images/images/backgrounds/dust2.jpg') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .references-page {
-  background: url('images/images/backgrounds/dust2.jpg') no-repeat center center fixed;
+  background: url('images/images/backgrounds/dust1.jpg') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
 }
