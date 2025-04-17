@@ -2,45 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>C B H Theory</title>
+  <title>CBH Theory</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    @font-face {
-      font-family: 'Westminster';
-      src: url('fonts/Westminster.ttf') format('truetype');
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-color: black;
-      font-family: 'Westminster', monospace;
-    }
-
-    .flicker-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.03);
-      pointer-events: none;
-      animation: flickerFlash 1.8s infinite ease-in-out;
-      z-index: 2;
-      mix-blend-mode: screen;
-    }
-
-    @keyframes flickerFlash {
-      0%, 100% { opacity: 0.02; }
-      10% { opacity: 0.08; }
-      20% { opacity: 0.03; }
-      30% { opacity: 0.10; }
-      40%, 60% { opacity: 0.015; }
-      70% { opacity: 0.07; }
-      85% { opacity: 0.025; }
-      95% { opacity: 0.05; }
-    }
-  </style>
 </head>
 <body>
 
@@ -49,11 +12,11 @@
 
   <!-- Hero Section -->
   <div class="hero" id="hero">
-    <div class="arc-overlay"></div> <!-- Planck overlay inserted here -->
+    <div class="arc-overlay"></div> <!-- Optional overlay image -->
 
     <a href="theory.html" class="title-link" onclick="flashBackground()">CBH Theory</a>
 
-    <!-- Lightning bolt -->
+    <!-- Optional lightning bolt -->
     <svg class="bolt" viewBox="0 0 100 100">
       <polyline points="40,0 60,40 45,40 60,100 35,60 50,60 40,0"
                 fill="none" stroke="white" stroke-width="3" />
@@ -117,12 +80,10 @@
         zapSound.play();
       }
 
-      if (gain && osc) {
-        gain.gain.setValueAtTime(0.25, context.currentTime);
-        osc.frequency.setValueAtTime(220, context.currentTime);
-        osc.frequency.linearRampToValueAtTime(58, context.currentTime + 1.5);
-        gain.gain.exponentialRampToValueAtTime(0.015, context.currentTime + 1.5);
-      }
+      gain.gain.setValueAtTime(0.25, context.currentTime);
+      osc.frequency.setValueAtTime(220, context.currentTime);
+      osc.frequency.linearRampToValueAtTime(58, context.currentTime + 1.5);
+      gain.gain.exponentialRampToValueAtTime(0.015, context.currentTime + 1.5);
 
       title.classList.add('ripple');
       setTimeout(() => {
