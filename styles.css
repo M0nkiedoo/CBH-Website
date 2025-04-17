@@ -7,7 +7,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh; /* Change from height: 100% to this */
   background: url('images/cosmic-background.png') no-repeat center center fixed;
   background-size: cover;
   color: white;
@@ -114,31 +114,37 @@ a:hover {
 .theory-page {
   background: url('images/images/backgrounds/milkyway1.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter1-page {
   background: url('images/images/backgrounds/milkyway2.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter2-page {
   background: url('images/images/backgrounds/milkyway3.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter3-page {
   background: url('images/images/backgrounds/milkyway4.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter4-page {
   background: url('images/images/backgrounds/earthrisen.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter5-page {
   background: url('images/images/backgrounds/gasclouds2.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter6-page {
@@ -149,24 +155,29 @@ a:hover {
 .chapter7-page {
   background: url('images/images/backgrounds/gasclouds3.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .chapter8-page {
   background: url('images/images/backgrounds/moonrise.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .epilogue-page {
   background: url('images/images/backgrounds/universe.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bio-page {
   background: url('images/images/backgrounds/dust1.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .references-page {
   background: url('images/images/backgrounds/dust2.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
